@@ -1,0 +1,125 @@
+/* common/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* 기본 리셋 (모든 페이지에 공통 적용) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    text-decoration: none;
+}
+
+/* 기본 폰트 크기 설정 (반응형) */
+html,
+body {
+    height: 100%; /* 화면 전체 높이 사용 */
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-content {
+    flex: 1;
+    /* margin-top: 81.8px; 헤더 높이만큼 밀어줌 */
+}
+
+/* 기본 스타일 - 모바일 퍼스트 */
+body {
+    font-family: 'Noto Sans KR', sans-serif !important;
+    line-height: 1.5;
+    margin-top: 33px;
+    height: 100%; /* 화면 전체 높이 사용 */
+}
+
+h1 {
+    font-size: 44px;
+}
+
+h2 {
+    font-size: 34px;
+}
+h3 {
+    font-size: 25px;
+}
+p {
+    font-size: 16px;
+}
+
+/* 공통 버튼 스타일 */
+button {
+    display: inline-block;
+    padding: 0.5rem 1rem; /* 8px 16px */
+    font-size: clamp(0.7rem, 1vw, 1.05rem); /* 14.4px ~ 16.8px */
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    background-color: #0a8b11;
+    color: white;
+    text-decoration: none; /* 링크 스타일 없애기 */
+    outline: none;
+}
+button:hover {
+    background-color: #696b6a;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 기본 레이아웃 */
+.container {
+    max-width: 100%;
+    margin: auto;
+}
+
+@media (min-width: 750px) and (max-width: 1023px) {
+    h1 {
+        font-size: 50px;
+    }
+    h2 {
+        font-size: 41px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    p {
+        font-size: 23px;
+    }
+    .container {
+        margin-top: 60px;
+        padding: 0px 70px;
+    }
+    html,
+    body {
+        height: 100%; /* 화면 전체 높이 사용 */
+        margin: 0;
+        padding: 0;
+    }
+}
+@media (min-width: 1024px) {
+    .container {
+        padding: 0px 160px;
+        margin-top: 70px;
+        margin-bottom: 70px;
+    }
+    html,
+    body {
+        height: 100%; /* 화면 전체 높이 사용 */
+        margin: 0;
+        padding: 0;
+    }
+}

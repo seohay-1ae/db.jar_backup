@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.travelquest.openapi.mapper.TourPlaceMapper">
+
+    <insert id="insertTourPlace" parameterType="com.project.travelquest.openapi.dto.TourPlaceDTO">
+        INSERT INTO TOUR_PLACE (CONTENTID, AREACODE, ADDR1, ADDR2, CREATEDTIME, FIRSTIMAGE,
+                                FIRSTIMAGE2, MAPX, MAPY, MODIFIEDTIME, SIGUNGUCODE, TEL, TITLE,
+                                HOMEPAGE, OVERVIEW, OPENDATE, INFOCENTER, RESTDATE, USETIME,
+                                INFOCENTERCULTURE, RESTDATECULTURE, USEFEE, USETIMECULTURE)
+        VALUES (
+                #{contentid}, #{areacode}, #{addr1}, #{addr2}, #{createdtime}, #{firstimage},
+                #{firstimage2}, #{mapx}, #{mapy}, #{modifiedtime}, #{sigungucode}, #{tel}, #{title},
+                #{homepage}, #{overview}, #{opendate}, #{infocenter}, #{restdate}, #{usetime},
+                #{infocenterculture}, #{restdateculture}, #{usefee}, #{usetimeculture}
+               )
+    </insert>
+
+    <insert id="insertTourPlaces" parameterType="java.util.List">
+        INSERT INTO TOUR_PLACE (
+        CONTENTID, AREACODE, ADDR1, ADDR2, CREATEDTIME, FIRSTIMAGE, FIRSTIMAGE2, MAPX, MAPY, MODIFIEDTIME,
+        SIGUNGUCODE, TEL, TITLE, HOMEPAGE, OVERVIEW, OPENDATE, INFOCENTER, RESTDATE, USETIME, INFOCENTERCULTURE,
+        RESTDATECULTURE, USEFEE, USETIMECULTURE
+        )
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (
+            #{item.contentid}, #{item.areacode}, #{item.addr1}, #{item.addr2}, #{item.createdtime}, #{item.firstimage}, #{item.firstimage2},
+            #{item.mapx}, #{item.mapy}, #{item.modifiedtime}, #{item.sigungucode}, #{item.tel}, #{item.title}, #{item.homepage},
+            #{item.overview}, #{item.opendate}, #{item.infocenter}, #{item.restdate}, #{item.usetime}, #{item.infocenterculture},
+            #{item.restdateculture}, #{item.usefee}, #{item.usetimeculture}
+            )
+        </foreach>
+    </insert>
+
+</mapper>
